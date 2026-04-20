@@ -1,0 +1,1 @@
+l=['tea','ate','team','bin','meat','nib']
