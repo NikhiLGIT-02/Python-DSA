@@ -1,0 +1,15 @@
+salary=int(input('Enter Salary: '))
+hra = salary*0.20
+da = salary*0.50
+pf = salary*0.12
+gross_sal = salary+hra+da
+tax = gross_sal*0.10
+total_deductions = pf+tax
+net_sal = gross_sal-total_deductions
+print('HRA = ',hra)
+print('DA = ',da)
+print('Gross = ',gross_sal)
+print('PF = ',pf)
+print('Tax = ',tax)
+print('Total Deduction = ',total_deductions)
+print('Net Salary = ',net_sal)
