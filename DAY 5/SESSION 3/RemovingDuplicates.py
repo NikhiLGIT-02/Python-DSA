@@ -10,7 +10,6 @@ class LinkedList:
 
     def insertAtEnd(self, data):
         newNode = Node(data)
-        #Making first node as head
         if self.head is None:
             self.head = newNode
             return
@@ -20,5 +19,34 @@ class LinkedList:
             temp = temp.next
         temp.next = newNode
     
-    def remove_duplicate(self):
-        
+    def removeDupes(self):
+        seen = set()
+        temp = self.head
+        prev = None
+
+        while temp:
+            if temp.data in seen:
+                prev.next = temp.next
+            else:
+                seen.add(temp.data)
+                prev = temp
+            temp = temp.next
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+
+
+# Input Section
+ids = list(map(int, input('Enter the patient ID: ').split()))
+sll = LinkedList()
+
+for x in ids:
+    sll.insertAtEnd(x)
+
+sll.removeDupes()
+
+print('Unique ids display:')
+sll.display()
